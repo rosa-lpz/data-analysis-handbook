@@ -1,2 +1,26 @@
-# philosophy
-Notes and resources for Philosophy
+# Data Analysis Handbook
+ 
+Focuses on processing and analyzing data, primarily structured data, to extract useful information and support business decision-making.
+
+* It includes tasks such as cleaning, organizing, calculating metrics, statistical analysis, and creating visualizations.
+* Its purpose is to answer specific questions and solve specific problems based on existing data.
+* It requires skills in statistics, database management, and tools such as Excel, SQL, and visualization tools.
+* It is more descriptive and exploratory, focusing on interpreting data to improve efficiency and support business operations.
+
+# Statistics
+
+# Data Processing and Analysis
+* Python
+   * [NumPy](https://github.com/rosa-lpz/python/tree/main/python_numpy)
+   * [Pandas](https://github.com/rosa-lpz/python/tree/main/python_pandas)
+# Databases
+* SQL
+
+# Data Visualization
+* Power BI
+* Tableau
+* Google Data Studio / Looker
+* Python for Data Visualization
+  * [Matplotlib](https://github.com/rosa-lpz/python/tree/main/python_matplotlib)
+  * [Seaborn](https://github.com/rosa-lpz/python/tree/main/python_seaborn)
+  * [Plotly](https://github.com/rosa-lpz/python/tree/main/python_plotly)
