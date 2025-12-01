@@ -1,5 +1,5 @@
 # Data Analysis Handbook
- 
+
 Focuses on processing and analyzing data, primarily structured data, to extract useful information and support business decision-making.
 
 * It includes tasks such as cleaning, organizing, calculating metrics, statistical analysis, and creating visualizations.
@@ -21,13 +21,13 @@ Focuses on processing and analyzing data, primarily structured data, to extract 
 
 
 # Databases
-* SQL
+* [SQL](https://github.com/rosa-lpz/sql)
 
 # Data Visualization
-* Power BI
-* Tableau
-* Google Data Studio / Looker
+* [Power BI](/data-visualization/power-bi)
+* [Tableau](/data-visualization/tableau)
+* [Google Data Studio / Looker](/data-visualization/google-data-studio-looker)
 * Python for Data Visualization
-  * [Matplotlib](https://github.com/rosa-lpz/python/tree/main/python_matplotlib)
-  * [Seaborn](https://github.com/rosa-lpz/python/tree/main/python_seaborn)
-  * [Plotly](https://github.com/rosa-lpz/python/tree/main/python_plotly)
+  * [Matplotlib](https://github.com/rosa-lpz/python/tree/main/matplotlib)
+  * [Seaborn](https://github.com/rosa-lpz/python/tree/main/seaborn)
+  * [Plotly](https://github.com/rosa-lpz/python/tree/main/plotly)
