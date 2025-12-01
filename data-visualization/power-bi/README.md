@@ -8,7 +8,7 @@
 
 * #### [Functions](power-query-m/functions/)
 
-  * [Table Functions](functions/README.md)
+  * [Table Functions](power-query-m/functions/table/)
 
 
 
