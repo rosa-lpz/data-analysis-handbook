@@ -30,6 +30,10 @@ Microsoft Power Query provides a powerful data import experience that encompasse
 
 
 
+# Power Query Functions
+
+* Go to [Functions](/functions/)
+
 
 
 # References
