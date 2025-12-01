@@ -13,11 +13,10 @@ Focuses on processing and analyzing data, primarily structured data, to extract 
 * [Python](https://github.com/rosa-lpz/python/)
 * [R](https://github.com/rosa-lpz/r)
 * [SQL](https://github.com/rosa-lpz/sql)
-  
 # Data Cleaning, Processing and Analysis
 * Python
-   * [NumPy](https://github.com/rosa-lpz/python/tree/main/python_numpy)
-   * [Pandas](https://github.com/rosa-lpz/python/tree/main/python_pandas)
+   * [NumPy](https://github.com/rosa-lpz/python/tree/main/numpy)
+   * [Pandas](https://github.com/rosa-lpz/python/tree/main/pandas)
 
 
 # Databases
