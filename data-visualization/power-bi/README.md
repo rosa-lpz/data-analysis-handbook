@@ -12,6 +12,8 @@
 
 ### [Power Query M](power-bi/power-query-m/)
 
+[Power Query M](power-query-m/)
+
 ### [DAX](data-visualization/power-bi/dax/)
 
 
