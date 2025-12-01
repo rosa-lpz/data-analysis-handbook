@@ -1,8 +1,8 @@
 # Data Visualization
 
-* ## [Power BI](/power-bi/)
-* ## [Tableau](/tableau/)
-* ## [Google Data Studio / Looker](/google-data-studio-looker/)
+* ## [Power BI](/data-visualization/power-bi/)
+* ## [Tableau](/data-visualization/tableau/)
+* ## [Google Data Studio / Looker](/data-visualization/google-data-studio-looker/)
 * ## Python for Data Visualization
   
   * ### [Matplotlib](https://github.com/rosa-lpz/python/tree/main/matplotlib)
