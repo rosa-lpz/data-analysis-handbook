@@ -1,6 +1,6 @@
 # Power BI
 
-/data-visualization/power-bi/power-query-m
+
 
 ## Content
 
@@ -10,9 +10,6 @@
 
   * [Table Functions](power-query-m/functions/table/)
 
-
-
 ### [DAX](dax/)
 
-
-
+### [Documentation](documentation/)

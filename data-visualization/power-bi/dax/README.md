@@ -1,6 +1,4 @@
-# DAX overview
-
-​			  			 	   	
+# DAX overview			  			 	   	
 
 Data Analysis Expressions (DAX) is a  formula expression language used in Analysis Services, Power BI, and  Power Pivot in Excel. DAX formulas include functions, operators, and  values to perform advanced calculations and queries on data in related  tables and columns in tabular data models.
 
@@ -10,7 +8,7 @@ This article provides only a basic introduction to the most important concepts i
 
 DAX formulas are used in measures, calculated columns, calculated tables, and row-level security.
 
-
+### Measures
 
 ## Queries
 
@@ -34,4 +32,4 @@ Returns in Results a table listing only those products with a  SafetyStockLevel 
 
 # References
 
-* https://learn.microsoft.com/en-us/dax/dax-overview
+* Microsoft DAX Overview: https://learn.microsoft.com/en-us/dax/dax-overview
