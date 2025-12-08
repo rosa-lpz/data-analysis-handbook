@@ -133,3 +133,7 @@ Good documentation practices aim to make the report understandable and maintaina
 
 
 The fastest way to document a power bi model: https://www.youtube.com/watch?v=LbSAG5aoKh0
+
+
+
+Bricks - How to document Power BI reports: https://www.thebricks.com/resources/guide-how-to-document-power-bi-reports

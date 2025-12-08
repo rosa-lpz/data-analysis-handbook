@@ -1,0 +1,1 @@
+https://blog.coupler.io/power-bi-dashboard-examples/
