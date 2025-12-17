@@ -146,3 +146,29 @@ We get:
 - Cleaner model
 - Easier maintenance
 
+
+
+---
+
+## Sort Month Name by Month Number
+
+### Make sure you have these columns
+
+In your **Calendar (Date) table**:
+
+```
+
+Month Name = FORMAT ( [Date], "MMMM" )
+Month Number = MONTH ( [Date] )
+```
+
+------
+
+### Set the sort order 
+
+1. Go to **Data view**
+2. Click on **Month Name**
+3. In the ribbon: **Column tools → Sort by column**
+4. Choose **Month Number**
+
+This fixes month order everywhere (tables, slicers, charts).
