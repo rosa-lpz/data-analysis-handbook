@@ -1,0 +1,133 @@
+table prod_data
+	lineageTag: c881a85e-6433-49df-b869-2ccc8f90fb8f
+
+	measure 'Ranked Apples Table' = ```
+			EVALUATE
+			VAR CountRow = 
+			    CALCULATE(
+			        SELECTCOLUMNS(
+			            'prod_data',
+			            "Apple1", 'prod_data'[Apple1],
+			            "Apple2", 'prod_data'[Apple2],
+			            "Apple3", 'prod_data'[Apple3],
+			            "Apple4", 'prod_data'[Apple4],
+			            "Apple5", 'prod_data'[Apple5],
+			            "Apple6", 'prod_data'[Apple6],
+			            "Apple7", 'prod_data'[Apple7]
+			        ),
+			        'prod_data'[Quality Index] = "Count"
+			    )
+			RETURN
+			    TOPN(7, CountRow, [Apple1], ASC)
+			```
+		lineageTag: 91ed5e66-29f5-4c23-becb-5a165b803289
+
+	column 'Quality Index'
+		dataType: string
+		lineageTag: 47179a9d-10f0-4e95-8607-6ed9035fc9e3
+		summarizeBy: none
+		sourceColumn: Quality Index
+		sortByColumn: Index
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple1
+		dataType: string
+		lineageTag: aeefbad9-e524-46f3-a768-792caf5835ed
+		summarizeBy: none
+		sourceColumn: Apple1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple2
+		dataType: string
+		lineageTag: adec23cf-013b-47bd-97e2-de797030809e
+		summarizeBy: none
+		sourceColumn: Apple2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple3
+		dataType: string
+		lineageTag: 3e7df0c4-dff1-4bc2-a0f1-f02fa1a5c476
+		summarizeBy: none
+		sourceColumn: Apple3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple4
+		dataType: string
+		lineageTag: f58d0294-742b-482c-b113-ac2d2ff68ede
+		summarizeBy: none
+		sourceColumn: Apple4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple5
+		dataType: string
+		lineageTag: 9b3661f8-9dce-4885-a233-c418d89a8f7b
+		summarizeBy: none
+		sourceColumn: Apple5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple6
+		dataType: string
+		lineageTag: 6f2f5dd0-4c61-4d6e-a86e-11a6c2d19a6b
+		summarizeBy: none
+		sourceColumn: Apple6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple7
+		dataType: string
+		lineageTag: ab7dd893-7f77-4521-a6df-b6646ad605dc
+		summarizeBy: none
+		sourceColumn: Apple7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Percentage
+		dataType: string
+		lineageTag: 693698f4-8bd9-4752-9cf0-4e8169dabaa8
+		summarizeBy: none
+		sourceColumn: Percentage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Update'
+		dataType: string
+		lineageTag: ce77e5a6-5fa3-498a-bd15-14ca5e5ba62a
+		summarizeBy: none
+		sourceColumn: Date Update
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: 104104f2-fca6-4a94-8295-28223ce59140
+		summarizeBy: sum
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	partition prod_data = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\rosal\Repositories\GitHub\handbooks\data-analysis-handbook\data-visualization\power-bi\examples\tables\prod_data3.xlsx"), null, true),
+				    Sheet1_Sheet = Origen{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Added Index" = Table.AddIndexColumn(#"Promoted Headers", "Index", 0, 1, Int64.Type),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Added Index",{"Index", "Quality Index", "Apple 1", "Apple2", "Apple3", "Apple4", "Apple5", "Apple6", "Apple7", "Percentage", "Date Update"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Reordered Columns",{{"Apple 1", "Apple1"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
