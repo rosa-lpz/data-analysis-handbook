@@ -1,27 +1,6 @@
 table prod_data
 	lineageTag: c881a85e-6433-49df-b869-2ccc8f90fb8f
 
-	measure 'Ranked Apples Table' = ```
-			EVALUATE
-			VAR CountRow = 
-			    CALCULATE(
-			        SELECTCOLUMNS(
-			            'prod_data',
-			            "Apple1", 'prod_data'[Apple1],
-			            "Apple2", 'prod_data'[Apple2],
-			            "Apple3", 'prod_data'[Apple3],
-			            "Apple4", 'prod_data'[Apple4],
-			            "Apple5", 'prod_data'[Apple5],
-			            "Apple6", 'prod_data'[Apple6],
-			            "Apple7", 'prod_data'[Apple7]
-			        ),
-			        'prod_data'[Quality Index] = "Count"
-			    )
-			RETURN
-			    TOPN(7, CountRow, [Apple1], ASC)
-			```
-		lineageTag: 91ed5e66-29f5-4c23-becb-5a165b803289
-
 	column 'Quality Index'
 		dataType: string
 		lineageTag: 47179a9d-10f0-4e95-8607-6ed9035fc9e3
