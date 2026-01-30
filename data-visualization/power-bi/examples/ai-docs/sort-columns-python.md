@@ -28,7 +28,7 @@ Freshnesh,Passed,Not Passed,Passed,Passed,Passed,Passed,Passed,0.4,01/04/26
 
 
 
-# Prompt
+# Prompt - Data transformation
 
 **Table**
 
@@ -165,3 +165,42 @@ If privacy settings can't be changed, use Power Query's M language instead of Py
 1. In Power Query Editor, select your table
 2. Go to **Transform → Reorder Columns** (but we'll use Advanced Editor)
 3. Click **View → Advanced Editor** and modify the last step:
+
+
+
+# Prompt - Data transformation
+
+## Claude Sonnet 4.5 response
+
+Here's the Python code to do this in Power Query:
+
+```python
+# Run in Power Query: Transform > Run Python Script
+import pandas as pd
+
+# Get the row where Quality Index == 'Count'
+count_row = dataset[dataset['Quality Index'] == 'Count'].iloc[0]
+
+# Find all Apple columns
+apple_cols = [col for col in dataset.columns if col.startswith('Apple')]
+
+# Create a dictionary of column names and their count values
+count_dict = {col: int(count_row[col]) for col in apple_cols}
+
+# Sort Apple columns by count (descending)
+sorted_apple_cols = sorted(count_dict.keys(), key=lambda x: count_dict[x], reverse=True)
+
+# Reorder all columns: keep Index and Quality Index first, 
+# then sorted Apple columns, then the rest
+other_cols = [col for col in dataset.columns 
+              if col not in apple_cols and col not in ['Index', 'Quality Index']]
+
+#new_column_order = ['Index', 'Quality Index'] + sorted_apple_cols + other_cols
+new_column_order = ['Quality Index'] + sorted_apple_cols + other_cols
+
+# Reorder the dataframe
+dataset = dataset[new_column_order]
+```
+
+**Result:** Columns will be ordered as:
+`Index, Quality Index, Apple7 (87), Apple4 (
