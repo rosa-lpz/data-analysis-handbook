@@ -19,7 +19,7 @@ py -m ensurepip --default-pip
 python -m pip install
 
 [notice] A new release of pip is available: 23.2.1 -> 25.3
-[notice] To update, run: C:\Users\rosal\AppData\Local\Programs\Python\Python312\python.exe -m pip install --upgrade pip
+[notice] To update, run: C:<directory_path>\Python\Python312\python.exe -m pip install --upgrade pip
 
 ```
 
