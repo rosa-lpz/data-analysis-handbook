@@ -1,3 +1,47 @@
+# Sorting tables
+## Install Python Environment
+https://learn.microsoft.com/en-us/power-bi/connect-data/service-python-packages-support
+
+* Python 3.11
+* Pandas: 2.2.2
+* Seaborn:  0.13.2
+* matplotlib: 3.8.4
+
+```
+conda create --name <env-name>
+```
+
+### Creation of environment with Anaconda
+
+#### Environment set with python version and libraries set from the beggining
+To add packages while creating an environment, specify them after the environment name:
+
+```
+conda create --name envpython311 python==3.11 pandas==2.2.2 seaborn==0.13.2 matplotlib==3.8.4
+```
+
+
+#### Create environment and then install libraries
+
+**Environment**
+```cmd
+conda create -n envpython311 python==3.11 
+```
+or
+```cmd
+conda create --name envpython311 python==3.11 
+```
+
+**Libraries+
+
+```cmd
+pip install pandas==2.2.2 
+pip install seaborn==0.13.2 
+pip install matplotlib==3.8.4
+```
+
+
+
 ## Freeze rows
 
 https://community.fabric.microsoft.com/t5/Desktop/How-to-freeze-rows-in-a-Matrix-visual-in-Power-BI/td-p/4763705
