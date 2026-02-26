@@ -14,10 +14,11 @@ Focuses on processing and analyzing data, primarily structured data, to extract 
 * ### [R](https://github.com/rosa-lpz/r)
 * ### [SQL](https://github.com/rosa-lpz/sql)
 ## Data Cleaning, Processing and Analysis
-* ### Python
-   
+* ### [Python](https://github.com/rosa-lpz/python/) Libraries
+  
    * #### [NumPy](https://github.com/rosa-lpz/python/tree/main/numpy)
    * #### [Pandas](https://github.com/rosa-lpz/python/tree/main/pandas)
+   * #### [PySpark](https://github.com/rosa-lpz/pyspark)
 
 
 ## Databases
@@ -25,10 +26,21 @@ Focuses on processing and analyzing data, primarily structured data, to extract 
 
 ## [Data Visualization](data-visualization/)
 * ### [Power BI](data-visualization/power-bi/)
+
 * ### [Tableau](data-visualization/tableau/)
+
 * ### [Google Data Studio / Looker](data-visualization/google-data-studio-looker/)
-* ### Python for Data Visualization
+
+* ### [Python for Data Visualization](data-visualization/python/)
   
   * #### [Matplotlib](https://github.com/rosa-lpz/python/tree/main/matplotlib)
+  
   * #### [Seaborn](https://github.com/rosa-lpz/python/tree/main/seaborn)
+  
+  * #### [Bokeh](https://github.com/rosa-lpz/python/tree/main/bokeh)
+  
   * #### [Plotly](https://github.com/rosa-lpz/python/tree/main/plotly)
+  
+    
+  
+    
