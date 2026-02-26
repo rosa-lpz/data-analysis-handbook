@@ -19,12 +19,13 @@
 * ## [Python for Data Visualization](python/)
 
   * ### [NumPy](https://github.com/rosa-lpz/python/tree/main/numpy)
-    * ### [Pandas](https://github.com/rosa-lpz/python/tree/main/pandas)
 
-    * ### [Bokeh](https://github.com/rosa-lpz/python/tree/main/bokeh)
+  * ### [Pandas](https://github.com/rosa-lpz/python/tree/main/pandas)
 
-    * ### [Plotly](https://github.com/rosa-lpz/python/tree/main/plotly)
+  * ### [Bokeh](https://github.com/rosa-lpz/python/tree/main/bokeh)
 
-    * ### [Seaborn](https://github.com/rosa-lpz/python/tree/main/seaborn)
+  * ### [Plotly](https://github.com/rosa-lpz/python/tree/main/plotly)
 
-      
+  * ### [Seaborn](https://github.com/rosa-lpz/python/tree/main/seaborn)
+
+    
