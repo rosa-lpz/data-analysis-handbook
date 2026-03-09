@@ -64,7 +64,7 @@ https://community.fabric.microsoft.com/t5/Desktop/how-to-order-the-rows-in-table
   * Data View
   * Select column
   * Go to "Column tools" tab
-  * Select "Sort by column", and select the column in the dropdow
+  * Select "Sort by column", and select the column in the dropdown
 
 
 
@@ -140,9 +140,7 @@ RETURN
     TOPN(7, CountRow, [Apple1], ASC)
 ```
 
-cuenta powe bi microsoft - talvez con la escuela unadm
 
-mcpi powe bi
 
 
 
