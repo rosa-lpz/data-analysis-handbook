@@ -1,0 +1,116 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "64a7ce8cb2449840e857",
+  "position": {
+    "x": 681.64948453608247,
+    "y": 316.70103092783506,
+    "z": 2,
+    "height": 192.98969072164948,
+    "width": 454.63917525773195,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_filtered_color"
+                    }
+                  },
+                  "Property": "Fruit"
+                }
+              },
+              "queryRef": "fruits_filtered_color.Fruit",
+              "nativeQueryRef": "Fruit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_filtered_color"
+                    }
+                  },
+                  "Property": "Color"
+                }
+              },
+              "queryRef": "fruits_filtered_color.Color",
+              "nativeQueryRef": "Color"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_filtered_color"
+                    }
+                  },
+                  "Property": "Count"
+                }
+              },
+              "queryRef": "Sum(fruits_filtered_color.Count)",
+              "nativeQueryRef": "Count"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_filtered_color"
+                    }
+                  },
+                  "Property": "Flavor"
+                }
+              },
+              "queryRef": "fruits_filtered_color.Flavor",
+              "nativeQueryRef": "Flavor"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_filtered_color"
+                    }
+                  },
+                  "Property": "Freshnesh"
+                }
+              },
+              "queryRef": "fruits_filtered_color.Freshnesh",
+              "nativeQueryRef": "Freshnesh"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Filtered Table [Color]  = passed '"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
