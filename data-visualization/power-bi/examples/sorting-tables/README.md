@@ -150,3 +150,6 @@ RETURN
 
 * AI-POWERED POWER BI DEVELOPMENT IS HERE! - Power BI MCP Server Step by Step Walkthrough: https://youtu.be/3fFoUcj1tWc
 https://youtu.be/oNy4WodelZ8
+* https://www.statology.org/power-bi-change-order-of-columns/
+* https://www.youtube.com/watch?v=zF7SOU8QlbA
+* https://community.fabric.microsoft.com/t5/Desktop/How-to-re-arrange-columns-in-Power-BI-Visual/td-p/4145024
