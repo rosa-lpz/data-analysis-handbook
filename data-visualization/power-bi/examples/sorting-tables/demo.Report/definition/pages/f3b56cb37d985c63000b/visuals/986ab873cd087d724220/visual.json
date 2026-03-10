@@ -1,0 +1,294 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "986ab873cd087d724220",
+  "position": {
+    "x": 10.285714285714286,
+    "y": 176.72727272727272,
+    "z": 0,
+    "height": 448.83116883116884,
+    "width": 1269.8181818181818,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pythonVisual",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Apple1"
+                }
+              },
+              "queryRef": "prod_data.Apple1",
+              "nativeQueryRef": "Apple1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Apple2"
+                }
+              },
+              "queryRef": "prod_data.Apple2",
+              "nativeQueryRef": "Apple2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Apple3"
+                }
+              },
+              "queryRef": "prod_data.Apple3",
+              "nativeQueryRef": "Apple3"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Apple4"
+                }
+              },
+              "queryRef": "prod_data.Apple4",
+              "nativeQueryRef": "Apple4"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Apple5"
+                }
+              },
+              "queryRef": "prod_data.Apple5",
+              "nativeQueryRef": "Apple5"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Apple6"
+                }
+              },
+              "queryRef": "prod_data.Apple6",
+              "nativeQueryRef": "Apple6"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Apple7"
+                }
+              },
+              "queryRef": "prod_data.Apple7",
+              "nativeQueryRef": "Apple7"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Date Update"
+                }
+              },
+              "queryRef": "prod_data.Date Update",
+              "nativeQueryRef": "Date Update"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Index"
+                }
+              },
+              "queryRef": "prod_data.Index",
+              "nativeQueryRef": "Index"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Percentage"
+                }
+              },
+              "queryRef": "prod_data.Percentage",
+              "nativeQueryRef": "Percentage"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Quality Index"
+                }
+              },
+              "queryRef": "prod_data.Quality Index",
+              "nativeQueryRef": "Quality Index"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "script": [
+        {
+          "properties": {
+            "source": {
+              "expr": {
+                "Literal": {
+                  "Value": "'# The following code to create a dataframe and remove duplicated rows is always executed and acts as a preamble for your script: \n\n# dataset = pandas.DataFrame(Apple1, Apple2, Apple3, Apple4, Apple5, Apple6, Apple7, Date Update, Index, Percentage, Quality Index)\n# dataset = dataset.drop_duplicates()\n\n# Paste or type your script code here:\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Ensure Date Update is MM/DD/YY\ndataset[''Date Update''] = pd.to_datetime(dataset[''Date Update''], errors=''coerce'').dt.strftime(''%m/%d/%y'')\n\n# Seaborn-styled table\nsns.set_theme(style=\"white\")\nfig, ax = plt.subplots(figsize=(18, 2 + 0.6 * len(dataset)))\nax.axis(\"off\")\n\ntbl = ax.table(\n    cellText=dataset.fillna(\"\").values,\n    colLabels=dataset.columns.tolist(),\n    cellLoc=\"center\",\n    loc=\"center\"\n)\n\ntbl.auto_set_font_size(False)\ntbl.set_fontsize(10)\ntbl.scale(1, 1.5)\n\nfor (row, col), cell in tbl.get_celld().items():\n    if row == 0:\n        cell.set_facecolor(\"#4C72B0\")\n        cell.set_text_props(color=\"white\", weight=\"bold\")\n    else:\n        val = str(cell.get_text().get_text()).strip()\n        if val == \"Passed\":\n            cell.set_facecolor(\"#FFFFFF\")      # light green\n            cell.set_text_props(color=\"#006100\", weight=\"bold\")\n        else:\n            cell.set_facecolor(\"#EAEAF2\")\n\nplt.tight_layout()\nplt.show()'"
+                }
+              }
+            },
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Python'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

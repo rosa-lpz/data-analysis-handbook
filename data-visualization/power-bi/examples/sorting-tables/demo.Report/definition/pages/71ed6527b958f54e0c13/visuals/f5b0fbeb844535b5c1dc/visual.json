@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "ed733890a646ec881fb2",
+  "name": "f5b0fbeb844535b5c1dc",
   "position": {
     "x": 111.04477611940298,
-    "y": 122.6865671641791,
-    "z": 1000,
-    "height": 133.43283582089552,
-    "width": 984.17910447761187,
-    "tabOrder": 0
+    "y": 302.68656716417911,
+    "z": 2000,
+    "height": 132.53731343283582,
+    "width": 999.40298507462683,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "tableEx",
@@ -37,11 +37,11 @@
                       "Entity": "prod_data"
                     }
                   },
-                  "Property": "Apple4"
+                  "Property": "Apple7"
                 }
               },
-              "queryRef": "prod_data.Apple4",
-              "nativeQueryRef": "Apple4"
+              "queryRef": "prod_data.Apple7",
+              "nativeQueryRef": "Apple7"
             },
             {
               "field": {
@@ -51,11 +51,11 @@
                       "Entity": "prod_data"
                     }
                   },
-                  "Property": "Apple7"
+                  "Property": "Apple4"
                 }
               },
-              "queryRef": "prod_data.Apple7",
-              "nativeQueryRef": "Apple7"
+              "queryRef": "prod_data.Apple4",
+              "nativeQueryRef": "Apple4"
             },
             {
               "field": {
@@ -169,10 +169,10 @@
                     "Entity": "prod_data"
                   }
                 },
-                "Property": "Date Update"
+                "Property": "Apple2"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }

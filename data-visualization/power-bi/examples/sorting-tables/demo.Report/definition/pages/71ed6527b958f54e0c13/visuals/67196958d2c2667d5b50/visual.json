@@ -1,0 +1,193 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "67196958d2c2667d5b50",
+  "position": {
+    "x": 127.16417910447761,
+    "y": 468.35820895522386,
+    "z": 3000,
+    "height": 171.04477611940297,
+    "width": 1000.2985074626865,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Quality Index"
+                }
+              },
+              "queryRef": "prod_data.Quality Index",
+              "nativeQueryRef": "Quality Index",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "prod_data"
+                        }
+                      },
+                      "Property": "Apple1"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(prod_data.Apple1)",
+              "nativeQueryRef": "Apple1"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "prod_data"
+                        }
+                      },
+                      "Property": "Apple2"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(prod_data.Apple2)",
+              "nativeQueryRef": "Apple2"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "prod_data"
+                        }
+                      },
+                      "Property": "Apple5"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(prod_data.Apple5)",
+              "nativeQueryRef": "Apple5"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "prod_data"
+                        }
+                      },
+                      "Property": "Apple6"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(prod_data.Apple6)",
+              "nativeQueryRef": "Apple6"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "prod_data"
+                        }
+                      },
+                      "Property": "Apple3"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(prod_data.Apple3)",
+              "nativeQueryRef": "Apple3"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "prod_data"
+                        }
+                      },
+                      "Property": "Apple7"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(prod_data.Apple7)",
+              "nativeQueryRef": "Apple7"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "prod_data"
+                        }
+                      },
+                      "Property": "Apple4"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(prod_data.Apple4)",
+              "nativeQueryRef": "Apple4"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "prod_data.Quality Index"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "drillFilterOtherVisuals": true
+  }
+}

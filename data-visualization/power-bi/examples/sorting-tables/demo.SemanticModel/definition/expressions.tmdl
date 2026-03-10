@@ -1,0 +1,27 @@
+expression 'cols position' =
+		let
+		    Source = Csv.Document(File.Contents("C:\Users\rl-work\Documents\GitHub\handbooks\data-analysis-handbook\data-visualization\power-bi\examples\sorting-tables\data\position.csv"),[Delimiter=",", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"column", type text}, {"position", Int64.Type}, {"", type text}}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{""}),
+		    #"Sorted Rows" = Table.Sort(#"Removed Columns",{{"position", Order.Ascending}}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Sorted Rows",{{"column", "cols"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: eed07136-927f-4973-b6bd-6c6813404d87
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression prod_data_v2 =
+		let
+		    Origen = Excel.Workbook(File.Contents("C:\Users\rl-work\Documents\GitHub\handbooks\data-analysis-handbook\data-visualization\power-bi\examples\sorting-tables\data2\prod_db.xlsx"), null, true)
+		in
+		    Origen
+	lineageTag: 52b3dfdc-6258-477d-a905-83a3f342fa26
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,62 @@
+table fruits_db
+	lineageTag: 3ca2cf86-0653-4390-bf3f-72f0edf6f870
+
+	column Fruit
+		dataType: string
+		lineageTag: 98f790d8-abd2-4d97-8cef-d8ea242b78fe
+		summarizeBy: none
+		sourceColumn: Fruit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Count
+		dataType: int64
+		formatString: 0
+		lineageTag: 377662a8-ef62-4849-946f-3bb17642c298
+		summarizeBy: sum
+		sourceColumn: Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: d36feca5-ddbc-48ce-9a79-8094c5d3cb25
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flavor
+		dataType: string
+		lineageTag: bdbdd3ba-1ba9-437a-ab64-9f54af0f09ac
+		summarizeBy: none
+		sourceColumn: Flavor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Freshnesh
+		dataType: string
+		lineageTag: 2a0a1ea3-b816-4652-8093-545c649e23ff
+		summarizeBy: none
+		sourceColumn: Freshnesh
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fruits_db = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\rl-work\Documents\GitHub\handbooks\data-analysis-handbook\data-visualization\power-bi\examples\sorting-tables\data2\prod_db.xlsx"), null, true),
+				    fruits_db_Sheet = Source{[Item="fruits_db",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(fruits_db_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Fruit", type text}, {"Count", Int64.Type}, {"Color", type text}, {"Flavor", type text}, {"Freshnesh", type text}}),
+				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type"),
+				    #"Removed Bottom Rows" = Table.RemoveLastN(#"Removed Errors",9),
+				    #"Removed Bottom Rows1" = Table.RemoveLastN(#"Removed Bottom Rows",1)
+				in
+				    #"Removed Bottom Rows1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

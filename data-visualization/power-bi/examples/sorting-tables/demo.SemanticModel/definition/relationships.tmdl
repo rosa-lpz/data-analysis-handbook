@@ -1,0 +1,5 @@
+relationship d0ba7d51-7423-4e97-b8e3-3f3dc5bef4e5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: prod_data.'Date Update'
+	toColumn: LocalDateTable_ab166ae4-cbfb-4cc8-81e7-950fec6029e3.Date
+

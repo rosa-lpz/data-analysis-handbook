@@ -1,29 +1,17 @@
 table prod_data
-	lineageTag: c881a85e-6433-49df-b869-2ccc8f90fb8f
-
-	column Index
-		dataType: int64
-		formatString: 0
-		lineageTag: 9b769f29-e218-48ad-ae40-64c1cd1cd362
-		summarizeBy: sum
-		sourceColumn: Index
-
-		annotation SummarizationSetBy = Automatic
+	lineageTag: ce0ba3d5-1437-4f4f-878a-011230df69f2
 
 	column 'Quality Index'
 		dataType: string
-		lineageTag: 174aa07a-aace-447d-aa51-ec564be79592
+		lineageTag: 90665bf8-9f9e-480d-8e0c-7c72f34d7879
 		summarizeBy: none
 		sourceColumn: Quality Index
-		sortByColumn: Index
-
-		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
 	column Apple7
 		dataType: string
-		lineageTag: 061e0d97-686c-4876-9f0e-6f4eaeb1a3e2
+		lineageTag: 1f0714fb-5472-4f4f-b154-5aff3e69384f
 		summarizeBy: none
 		sourceColumn: Apple7
 
@@ -31,7 +19,7 @@ table prod_data
 
 	column Apple4
 		dataType: string
-		lineageTag: 8d1c1110-73dc-4f88-bc0a-f59d0e6870c5
+		lineageTag: a805a0b6-75c6-478d-a401-5bd8f04ed03b
 		summarizeBy: none
 		sourceColumn: Apple4
 
@@ -39,7 +27,7 @@ table prod_data
 
 	column Apple1
 		dataType: string
-		lineageTag: 5e0ab23e-3807-4295-86a6-6f0e3fa912c6
+		lineageTag: 6b917369-485d-486b-81ff-f239c2ac09a6
 		summarizeBy: none
 		sourceColumn: Apple1
 
@@ -47,7 +35,7 @@ table prod_data
 
 	column Apple2
 		dataType: string
-		lineageTag: f22a9f68-636e-4384-8c95-5610373dd0c5
+		lineageTag: f771ead7-b10e-4e27-a117-ed893f8314df
 		summarizeBy: none
 		sourceColumn: Apple2
 
@@ -55,7 +43,7 @@ table prod_data
 
 	column Apple3
 		dataType: string
-		lineageTag: fa85c8c3-45ca-47ad-b8bb-4952ad5ea49c
+		lineageTag: d1984adf-bca6-4c14-bfc1-6a4f6ad3308e
 		summarizeBy: none
 		sourceColumn: Apple3
 
@@ -63,7 +51,7 @@ table prod_data
 
 	column Apple6
 		dataType: string
-		lineageTag: 63b9df16-a25a-4810-97a0-b1d9c7bf391b
+		lineageTag: 7b369081-ab45-4e96-b1b3-89529a4d7789
 		summarizeBy: none
 		sourceColumn: Apple6
 
@@ -71,27 +59,42 @@ table prod_data
 
 	column Apple5
 		dataType: string
-		lineageTag: 3564f096-897f-4246-8ddd-2f30d98c3f3c
+		lineageTag: ed7cd588-ea73-4207-82e7-e7e28552aa3f
 		summarizeBy: none
 		sourceColumn: Apple5
 
 		annotation SummarizationSetBy = Automatic
 
 	column Percentage
-		dataType: double
-		lineageTag: 23f6abcb-e45f-4ed4-81ba-4d8e8fb4ae16
-		summarizeBy: sum
+		dataType: string
+		lineageTag: a77c9322-5325-4fd7-a481-d864929c7ded
+		summarizeBy: none
 		sourceColumn: Percentage
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Date Update'
-		dataType: string
-		lineageTag: f811570c-6c82-4797-8d46-e6b3adb533ba
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: af95d446-9eac-4623-bdc9-54e65b596be8
 		summarizeBy: none
 		sourceColumn: Date Update
+
+		variation Variation
+			isDefault
+			relationship: d0ba7d51-7423-4e97-b8e3-3f3dc5bef4e5
+			defaultHierarchy: LocalDateTable_ab166ae4-cbfb-4cc8-81e7-950fec6029e3.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: 45db12df-e00e-4bcf-b250-6e33d1f0b926
+		summarizeBy: sum
+		sourceColumn: Index
 
 		annotation SummarizationSetBy = Automatic
 
@@ -99,19 +102,21 @@ table prod_data
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\rosal\Repositories\GitHub\handbooks\data-analysis-handbook\data-visualization\power-bi\examples\sorting-tables\data\prod_data3.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents("C:\Users\rl-work\Documents\GitHub\handbooks\data-analysis-handbook\data-visualization\power-bi\examples\sorting-tables\data\prod_data3.xlsx"), null, true),
 				    Sheet1_Sheet = Origen{[Item="Sheet1",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
 				    #"Added Index" = Table.AddIndexColumn(#"Promoted Headers", "Index", 0, 1, Int64.Type),
 				    #"Reordered Columns" = Table.ReorderColumns(#"Added Index",{"Index", "Quality Index", "Apple1", "Apple2", "Apple3", "Apple4", "Apple5", "Apple6", "Apple7", "Percentage", "Date Update"}),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Reordered Columns",{{"Date Update", type date}, {"Percentage", Percentage.Type}}),
-				    #"Run Python script" = Python.Execute("# Run in Power Query#(lf)import pandas as pd#(lf)#(lf)# Get the row where Quality Index == 'Count'#(lf)count_row = dataset[dataset['Quality Index'] == 'Count'].iloc[0]#(lf)#(lf)# Find all Apple columns#(lf)apple_cols = [col for col in dataset.columns if col.startswith('Apple')]#(lf)#(lf)# Create a dictionary of column names and their count values#(lf)count_dict = {col: int(count_row[col]) for col in apple_cols}#(lf)#(lf)# Sort Apple columns by count (descending)#(lf)sorted_apple_cols = sorted(count_dict.keys(), key=lambda x: count_dict[x], reverse=True)#(lf)#(lf)# Reorder all columns: keep Index and Quality Index first, #(lf)# then sorted Apple columns, then the rest#(lf)other_cols = [col for col in dataset.columns #(lf)              if col not in apple_cols and col not in ['Index', 'Quality Index']]#(lf)#(lf)new_column_order = ['Quality Index'] + sorted_apple_cols + other_cols#(lf)#(lf)# Reorder the dataframe#(lf)dataset = dataset[new_column_order]# 'dataset' holds the input data for this script#(lf)",[dataset=#"Changed Type"]),
+				    #"Reordered Columns1" = Table.ReorderColumns(#"Changed Type",{"Index", "Quality Index", "Apple4", "Apple7", "Apple1", "Apple2", "Apple3", "Apple6", "Apple5", "Percentage", "Date Update"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Reordered Columns1",{{"Quality Index", type text}, {"Apple7", type text}, {"Apple4", type text}, {"Apple1", type text}, {"Apple2", type text}, {"Apple3", type text}, {"Apple6", type text}, {"Apple5", type text}, {"Percentage", type number}, {"Date Update", type text}}),
+				    #"Run Python script" = Python.Execute("# Run in Power Query#(lf)import pandas as pd#(lf)#(lf)# Get the row where Quality Index == 'Count'#(lf)count_row = dataset[dataset['Quality Index'] == 'Count'].iloc[0]#(lf)#(lf)# Find all Apple columns#(lf)apple_cols = [col for col in dataset.columns if col.startswith('Apple')]#(lf)#(lf)# Create a dictionary of column names and their count values#(lf)count_dict = {col: int(count_row[col]) for col in apple_cols}#(lf)#(lf)# Sort Apple columns by count (descending)#(lf)sorted_apple_cols = sorted(count_dict.keys(), key=lambda x: count_dict[x], reverse=True)#(lf)#(lf)# Reorder all columns: keep Index and Quality Index first, #(lf)# then sorted Apple columns, then the rest#(lf)other_cols = [col for col in dataset.columns #(lf)              if col not in apple_cols and col not in ['Index', 'Quality Index']]#(lf)#(lf)new_column_order = ['Quality Index'] + sorted_apple_cols + other_cols#(lf)#(lf)# Reorder the dataframe#(lf)dataset = dataset[new_column_order]# 'dataset' holds the input data for this script#(lf)",[dataset=#"Changed Type1"]),
 				    dataset = #"Run Python script"{[Name="dataset"]}[Value],
-				    #"Changed Type1" = Table.TransformColumnTypes(dataset,{{"Quality Index", type text}, {"Apple7", type text}, {"Apple4", type text}, {"Apple1", type text}, {"Apple2", type text}, {"Apple3", type text}, {"Apple6", type text}, {"Apple5", type text}, {"Percentage", type number}, {"Date Update", type text}}),
-				    #"Added Index1" = Table.AddIndexColumn(#"Changed Type1", "Index", 0, 1, Int64.Type),
-				    #"Reordered Columns1" = Table.ReorderColumns(#"Added Index1",{"Index", "Quality Index", "Apple7", "Apple4", "Apple1", "Apple2", "Apple3", "Apple6", "Apple5", "Percentage", "Date Update"})
+				    #"Added Index1" = Table.AddIndexColumn(dataset, "Index", 0, 1, Int64.Type),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Index1",{{"Date Update", type date}}),
+				    Custom1 = #"Changed Type2"
 				in
-				    #"Reordered Columns1"
+				    Custom1
 
 	annotation PBI_NavigationStepName = Navegación
 

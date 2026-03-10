@@ -3,16 +3,20 @@ model Model
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	sourceQueryCulture: en-US
 	dataAccessOptions
+		fastCombine
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["prod_data"]
+annotation PBI_QueryOrder = ["prod_data","cols position","prod_data_v2","fruits_db"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table prod_data
+ref table DateTableTemplate_3c62abdf-ac4c-47e1-b280-20319519ec53
+ref table LocalDateTable_ab166ae4-cbfb-4cc8-81e7-950fec6029e3
+ref table fruits_db
 
 ref cultureInfo es-ES
 

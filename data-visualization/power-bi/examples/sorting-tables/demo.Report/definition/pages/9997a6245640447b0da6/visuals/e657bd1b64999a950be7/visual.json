@@ -1,0 +1,81 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "e657bd1b64999a950be7",
+  "position": {
+    "x": 322.38805970149252,
+    "y": 311.64179104477608,
+    "z": 1,
+    "height": 151.34328358208955,
+    "width": 634.92537313432831,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_db"
+                    }
+                  },
+                  "Property": "Fruit"
+                }
+              },
+              "queryRef": "fruits_db.Fruit",
+              "nativeQueryRef": "Fruit",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_data"
+                    }
+                  },
+                  "Property": "Quality Index"
+                }
+              },
+              "queryRef": "prod_data.Quality Index",
+              "nativeQueryRef": "Quality Index",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fruits_db"
+                        }
+                      },
+                      "Property": "Count"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(fruits_db.Count)",
+              "nativeQueryRef": "Sum of Count"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
