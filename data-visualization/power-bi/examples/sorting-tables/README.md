@@ -149,3 +149,4 @@ RETURN
 
 
 * AI-POWERED POWER BI DEVELOPMENT IS HERE! - Power BI MCP Server Step by Step Walkthrough: https://youtu.be/3fFoUcj1tWc
+https://youtu.be/oNy4WodelZ8
