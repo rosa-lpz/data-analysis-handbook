@@ -1,0 +1,41 @@
+table quality_metrics
+	lineageTag: 317c8eee-66c0-4084-9896-0b145e558646
+
+	column Quality_Index
+		dataType: string
+		lineageTag: 63ff7e0a-be1d-42e1-bf62-a5b64b50b4c4
+		summarizeBy: none
+		sourceColumn: Quality_Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column Percentage
+		dataType: string
+		lineageTag: 1dbed7d2-8af9-451b-a202-e9ad64f97d72
+		summarizeBy: none
+		sourceColumn: Percentage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Update
+		dataType: string
+		lineageTag: 37dcd30d-1644-47bd-b1d8-31d40d027cd1
+		summarizeBy: none
+		sourceColumn: Date_Update
+
+		annotation SummarizationSetBy = Automatic
+
+	partition quality_metrics = m
+		mode: import
+		queryGroup: matrix
+		source =
+				let
+				    Source = Csv.Document(File.Contents(folderPath & "quality_metrics.csv"),[Delimiter=",", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

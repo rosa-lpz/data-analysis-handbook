@@ -1,0 +1,25 @@
+relationship e6e0ea6b-5e26-83e7-63e9-0520cec8b00b
+	fromColumn: quality_checks.Quality_Index
+	toColumn: quality_metrics.Quality_Index
+
+relationship AutoDetected_e60255e4-a393-4ce1-9c47-ea7090a28e83
+	fromColumn: quality_data.Quality_Index
+	toColumn: prod_data.'Quality Index'
+
+relationship AutoDetected_964ebdae-b6e2-4aed-adc6-da1ba0693d6c
+	fromColumn: quality_data.Quality_Index
+	toColumn: quality_metrics.Quality_Index
+
+relationship AutoDetected_8813c63d-5d39-428c-ba16-e2a4f173ddc4
+	fromColumn: quality_data.Quality_Index
+	toColumn: fruit_quality.Quality_Index
+
+relationship c645e6a7-f308-4d19-be5c-5c0ffed1fb5c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: quality_data.'quality_metrics.Date_Update'
+	toColumn: LocalDateTable_d14124ce-14dc-4c4a-a730-f30d41f5af3f.Date
+
+relationship d5da21de-9dc7-cfac-b237-8134c685bd54
+	fromColumn: quality_checks.Quality_Index
+	toColumn: qi_rank.Quality_Index
+

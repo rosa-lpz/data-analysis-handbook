@@ -1,0 +1,119 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/semanticModel/unappliedChanges/1.0.0/schema.json",
+  "conceptualSchemaSettings": {},
+  "queries": [
+    {
+      "name": "prod_data",
+      "lineageTag": "ce0ba3d5-1437-4f4f-878a-011230df69f2",
+      "navigationStepName": "Navegación",
+      "text": [
+        "let",
+        "    Origen = Excel.Workbook(File.Contents(\"C:\\Users\\rl-work\\Documents\\GitHub\\training-projects\\power-bi-fruits\\data\\prod_data.xlsx\"), null, true),",
+        "    Sheet1_Sheet = Origen{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+        "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),",
+        "    #\"Added Index\" = Table.AddIndexColumn(#\"Promoted Headers\", \"Index\", 0, 1, Int64.Type),",
+        "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Added Index\",{{\"Date Update\", type date}, {\"Percentage\", Percentage.Type}}),",
+        "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Changed Type\",{{\"Quality Index\", type text}, {\"Apple7\", type text}, {\"Apple4\", type text}, {\"Apple1\", type text}, {\"Apple2\", type text}, {\"Apple3\", type text}, {\"Apple6\", type text}, {\"Apple5\", type text}, {\"Percentage\", type number}, {\"Date Update\", type text}}),",
+        "    Custom1 = #\"Changed Type1\"",
+        "in",
+        "    Custom1"
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Origen = Excel.Workbook(File.Contents(\\\"C:\\\\Users\\\\rl-work\\\\Documents\\\\GitHub\\\\training-projects\\\\power-bi-fruits\\\\data\\\\prod_data.xlsx\\\"), null, true),\\n    Sheet1_Sheet = Origen{[Item=\\\"Sheet1\\\",Kind=\\\"Sheet\\\"]}[Data],\\n    #\\\"Promoted Headers\\\" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),\\n    #\\\"Added Index\\\" = Table.AddIndexColumn(#\\\"Promoted Headers\\\", \\\"Index\\\", 0, 1, Int64.Type),\\n    #\\\"Changed Type\\\" = Table.TransformColumnTypes(#\\\"Added Index\\\",{{\\\"Date Update\\\", type date}, {\\\"Percentage\\\", Percentage.Type}}),\\n    #\\\"Changed Type1\\\" = Table.TransformColumnTypes(#\\\"Changed Type\\\",{{\\\"Quality Index\\\", type text}, {\\\"Apple7\\\", type text}, {\\\"Apple4\\\", type text}, {\\\"Apple1\\\", type text}, {\\\"Apple2\\\", type text}, {\\\"Apple3\\\", type text}, {\\\"Apple6\\\", type text}, {\\\"Apple5\\\", type text}, {\\\"Percentage\\\", type number}, {\\\"Date Update\\\", type text}}),\\n    Custom1 = #\\\"Changed Type1\\\"\\nin\\n    Custom1\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "fruit_quality",
+      "lineageTag": "e7810b19-a4d3-4dec-8e94-bb459f06dfec",
+      "queryGroupId": "50ba103f-3c10-42c7-add7-0d94f4e48cdd",
+      "navigationStepName": "Navigation",
+      "text": [
+        "let",
+        "    Source = Csv.Document(Web.Contents(folderPath & \"fruit_quality.csv\"),[Delimiter=\",\", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+        "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+        "in",
+        "    #\"Promoted Headers\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Source = Csv.Document(File.Contents(\\\"C:\\\\Users\\\\rl-work\\\\Documents\\\\GitHub\\\\training-projects\\\\power-bi-fruits\\\\data\\\\matrix\\\\fruit_quality.csv\\\"),[Delimiter=\\\",\\\", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),\\n    #\\\"Promoted Headers\\\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])\\nin\\n    #\\\"Promoted Headers\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "quality_checks",
+      "lineageTag": "e1cb3265-0047-4f5c-ad90-ee068bc190bc",
+      "queryGroupId": "50ba103f-3c10-42c7-add7-0d94f4e48cdd",
+      "navigationStepName": "Navigation",
+      "text": [
+        "let",
+        "    Source = Csv.Document(File.Contents(folderPath & \"quality_checks.csv\"),[Delimiter=\",\", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+        "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+        "in",
+        "    #\"Promoted Headers\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Source = Csv.Document(File.Contents(\\\"C:\\\\Users\\\\rl-work\\\\Documents\\\\GitHub\\\\training-projects\\\\power-bi-fruits\\\\data\\\\matrix\\\\quality_checks.csv\\\"),[Delimiter=\\\",\\\", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),\\n    #\\\"Promoted Headers\\\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])\\nin\\n    #\\\"Promoted Headers\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "quality_metrics",
+      "lineageTag": "317c8eee-66c0-4084-9896-0b145e558646",
+      "queryGroupId": "50ba103f-3c10-42c7-add7-0d94f4e48cdd",
+      "navigationStepName": "Navigation",
+      "text": [
+        "let",
+        "    Source = Csv.Document(File.Contents(folderPath & \"quality_metrics.csv\"),[Delimiter=\",\", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+        "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+        "in",
+        "    #\"Promoted Headers\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Source = Csv.Document(File.Contents(\\\"C:\\\\Users\\\\rl-work\\\\Documents\\\\GitHub\\\\training-projects\\\\power-bi-fruits\\\\data\\\\matrix\\\\quality_metrics.csv\\\"),[Delimiter=\\\",\\\", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),\\n    #\\\"Promoted Headers\\\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])\\nin\\n    #\\\"Promoted Headers\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "quality_data",
+      "lineageTag": "079ae368-2362-4e54-91e9-2ef03e1261bf",
+      "queryGroupId": "50ba103f-3c10-42c7-add7-0d94f4e48cdd",
+      "navigationStepName": "Navigation",
+      "text": [
+        "let",
+        "    Source = Table.NestedJoin(quality_checks, {\"Quality_Index\"}, quality_metrics, {\"Quality_Index\"}, \"quality_metrics\", JoinKind.FullOuter),",
+        "    #\"Expanded quality_metrics\" = Table.ExpandTableColumn(Source, \"quality_metrics\", {\"Quality_Index\", \"Percentage\", \"Date_Update\"}, {\"quality_metrics.Quality_Index\", \"quality_metrics.Percentage\", \"quality_metrics.Date_Update\"}),",
+        "    #\"Removed Columns\" = Table.RemoveColumns(#\"Expanded quality_metrics\",{\"quality_metrics.Quality_Index\"})",
+        "in",
+        "    #\"Removed Columns\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\n    Source = Table.NestedJoin(quality_checks, {\\\"Quality_Index\\\"}, quality_metrics, {\\\"Quality_Index\\\"}, \\\"quality_metrics\\\", JoinKind.FullOuter),\\n    #\\\"Expanded quality_metrics\\\" = Table.ExpandTableColumn(Source, \\\"quality_metrics\\\", {\\\"Quality_Index\\\", \\\"Percentage\\\", \\\"Date_Update\\\"}, {\\\"quality_metrics.Quality_Index\\\", \\\"quality_metrics.Percentage\\\", \\\"quality_metrics.Date_Update\\\"}),\\n    #\\\"Removed Columns\\\" = Table.RemoveColumns(#\\\"Expanded quality_metrics\\\",{\\\"quality_metrics.Quality_Index\\\"})\\nin\\n    #\\\"Removed Columns\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "folderPath",
+      "lineageTag": "db51cbd6-1b24-4a2f-90cc-80e0698103d2",
+      "navigationStepName": "Navigation",
+      "text": [
+        "\"add_your_folder_path\" meta [IsParameterQuery=true, Type=\"Any\", IsParameterQueryRequired=true]"
+      ],
+      "loadAsTableDisabled": true,
+      "resultType": "Text"
+    }
+  ],
+  "queryGroups": [
+    {
+      "name": "matrix",
+      "id": "50ba103f-3c10-42c7-add7-0d94f4e48cdd",
+      "description": ""
+    }
+  ],
+  "culture": "en-US"
+}

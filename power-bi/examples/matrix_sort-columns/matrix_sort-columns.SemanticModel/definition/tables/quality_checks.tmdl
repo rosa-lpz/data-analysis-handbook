@@ -1,0 +1,113 @@
+table quality_checks
+	lineageTag: e1cb3265-0047-4f5c-ad90-ee068bc190bc
+
+	measure QI_Rank_measure =
+			
+			SWITCH(
+			    SELECTEDVALUE(quality_checks[Quality_Index]),
+			    "Count",     1,
+			    "Color",     2,
+			    "Flavor",    3,
+			    "Freshness", 4
+			)
+		formatString: 0
+		lineageTag: c577df1b-00dc-4a5b-9533-56e193a5940a
+
+	column Quality_Index
+		dataType: string
+		lineageTag: 9efdb40b-b7c1-4486-9496-99b03e6c96a1
+		summarizeBy: none
+		sourceColumn: Quality_Index
+		sortByColumn: QI_Rank
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple_Name
+		dataType: string
+		lineageTag: 8ab0b4cb-a7fa-4943-b1b4-a2729c43e0dd
+		summarizeBy: none
+		sourceColumn: Apple_Name
+		sortByColumn: Count_Sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 4c06011a-98a3-4f46-8ac7-6f32ca908109
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Count_Sort
+		dataType: int64
+		formatString: 0
+		lineageTag: be6df064-8468-4537-8dd1-3b8a071201ee
+		summarizeBy: sum
+		sourceColumn: Count_Sort
+
+		changedProperty = DataType
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Count_Rank =
+			
+			RANKX(
+			    ALL(quality_checks[Count_Sort]),
+			    quality_checks[Count_Sort],
+			    ,
+			    DESC,
+			    Dense
+			)
+		formatString: 0
+		lineageTag: 397adbca-545b-4499-8b5c-4292eb335468
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column qiRank =
+			
+			SWITCH(
+			    quality_checks[Quality_Index],
+			    "Count",     1,
+			    "Color",     2,
+			    "Flavor",    3,
+			    "Freshness", 4
+			)
+		formatString: 0
+		lineageTag: da5033d7-32e2-444c-ae1e-9e6c9844e7d2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column QI_Rank =
+			
+			RELATED(qi_rank[QI_Rank])
+		formatString: 0
+		lineageTag: b1a4adf3-43d8-4043-ab70-3ab069ef4ea9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition quality_checks = m
+		mode: import
+		queryGroup: matrix
+		source =
+				let
+				    Source = Csv.Document(File.Contents(folderPath & "quality_checks.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

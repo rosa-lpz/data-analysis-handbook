@@ -1,0 +1,37 @@
+table qi_rank
+	lineageTag: edde6f0e-e634-48e0-ba04-902c1e255597
+
+	column Quality_Index
+		lineageTag: b367a1b0-dc62-4afa-95a4-6f71b9d55bf1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quality_Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column QI_Rank
+		formatString: 0
+		lineageTag: 933786d9-8e69-4f6e-9595-fd647f4b523f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [QI_Rank]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition qi_rank = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Quality_Index", STRING,
+				    "QI_Rank",       INTEGER,
+				    {
+				        { "Count",     1 },
+				        { "Color",     2 },
+				        { "Flavor",    3 },
+				        { "Freshness", 4 }
+				    }
+				)
+
+	annotation PBI_Id = 3ae2b610d7f044729e87c2575a2297db
+

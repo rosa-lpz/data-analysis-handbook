@@ -1,0 +1,112 @@
+table prod_data
+	lineageTag: ce0ba3d5-1437-4f4f-878a-011230df69f2
+
+	column 'Quality Index'
+		dataType: string
+		lineageTag: 90665bf8-9f9e-480d-8e0c-7c72f34d7879
+		summarizeBy: none
+		sourceColumn: Quality Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple7
+		dataType: string
+		lineageTag: 1f0714fb-5472-4f4f-b154-5aff3e69384f
+		summarizeBy: none
+		sourceColumn: Apple7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple4
+		dataType: string
+		lineageTag: a805a0b6-75c6-478d-a401-5bd8f04ed03b
+		summarizeBy: none
+		sourceColumn: Apple4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple1
+		dataType: string
+		lineageTag: 6b917369-485d-486b-81ff-f239c2ac09a6
+		summarizeBy: none
+		sourceColumn: Apple1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple2
+		dataType: string
+		lineageTag: f771ead7-b10e-4e27-a117-ed893f8314df
+		summarizeBy: none
+		sourceColumn: Apple2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple3
+		dataType: string
+		lineageTag: d1984adf-bca6-4c14-bfc1-6a4f6ad3308e
+		summarizeBy: none
+		sourceColumn: Apple3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple6
+		dataType: string
+		lineageTag: 7b369081-ab45-4e96-b1b3-89529a4d7789
+		summarizeBy: none
+		sourceColumn: Apple6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple5
+		dataType: string
+		lineageTag: ed7cd588-ea73-4207-82e7-e7e28552aa3f
+		summarizeBy: none
+		sourceColumn: Apple5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Percentage
+		dataType: double
+		lineageTag: a77c9322-5325-4fd7-a481-d864929c7ded
+		summarizeBy: none
+		sourceColumn: Percentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Date Update'
+		dataType: string
+		lineageTag: af95d446-9eac-4623-bdc9-54e65b596be8
+		summarizeBy: none
+		sourceColumn: Date Update
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: 45db12df-e00e-4bcf-b250-6e33d1f0b926
+		summarizeBy: none
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	partition prod_data = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\rl-work\Documents\GitHub\training-projects\power-bi-fruits\data\prod_data.xlsx"), null, true),
+				    Sheet1_Sheet = Origen{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Added Index" = Table.AddIndexColumn(#"Promoted Headers", "Index", 0, 1, Int64.Type),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Index",{{"Date Update", type date}, {"Percentage", Percentage.Type}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"Quality Index", type text}, {"Apple7", type text}, {"Apple4", type text}, {"Apple1", type text}, {"Apple2", type text}, {"Apple3", type text}, {"Apple6", type text}, {"Apple5", type text}, {"Percentage", type number}, {"Date Update", type text}}),
+				    Custom1 = #"Changed Type1"
+				in
+				    Custom1
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

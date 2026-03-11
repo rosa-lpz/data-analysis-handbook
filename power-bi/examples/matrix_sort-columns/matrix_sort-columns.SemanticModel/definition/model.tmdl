@@ -1,0 +1,31 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup matrix
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["prod_data","fruit_quality","quality_checks","quality_metrics","quality_data","folderPath"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table prod_data
+ref table DateTableTemplate_3c62abdf-ac4c-47e1-b280-20319519ec53
+ref table columns_rank
+ref table fruit_quality
+ref table quality_checks
+ref table quality_metrics
+ref table quality_data
+ref table LocalDateTable_d14124ce-14dc-4c4a-a730-f30d41f5af3f
+ref table qi_rank
+
+ref cultureInfo es-ES
+

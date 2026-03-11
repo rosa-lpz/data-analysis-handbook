@@ -1,0 +1,86 @@
+table quality_data
+	lineageTag: 079ae368-2362-4e54-91e9-2ef03e1261bf
+
+	column Quality_Index
+		dataType: string
+		lineageTag: f75b82c9-5937-489e-aee6-ff7e8c57d16b
+		summarizeBy: none
+		sourceColumn: Quality_Index
+		sortByColumn: 'quality_metrics.Percentage'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple_Name
+		dataType: string
+		lineageTag: 0c8a5bef-9e18-48b3-ac2d-2e33c9a60204
+		summarizeBy: none
+		sourceColumn: Apple_Name
+		sortByColumn: Count_Sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 3640d1e2-7cf1-45ce-89b6-5adc7c7fc2f1
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Count_Sort
+		dataType: string
+		lineageTag: c085abc7-e214-42de-b934-7dc1b82041fb
+		summarizeBy: none
+		sourceColumn: Count_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'quality_metrics.Percentage'
+		dataType: double
+		lineageTag: f91cf3e3-eb62-4ae5-800c-9ea4b2d2e118
+		summarizeBy: sum
+		sourceColumn: quality_metrics.Percentage
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'quality_metrics.Date_Update'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ae21df4e-96d5-4a4e-a7c9-94ef8840c9d2
+		summarizeBy: none
+		sourceColumn: quality_metrics.Date_Update
+
+		variation Variation
+			isDefault
+			relationship: c645e6a7-f308-4d19-be5c-5c0ffed1fb5c
+			defaultHierarchy: LocalDateTable_d14124ce-14dc-4c4a-a730-f30d41f5af3f.'Jerarquía de fechas'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition quality_data = m
+		mode: import
+		queryGroup: matrix
+		source =
+				let
+				    Source = Table.NestedJoin(quality_checks, {"Quality_Index"}, quality_metrics, {"Quality_Index"}, "quality_metrics", JoinKind.FullOuter),
+				    #"Expanded quality_metrics" = Table.ExpandTableColumn(Source, "quality_metrics", {"Quality_Index", "Percentage", "Date_Update"}, {"quality_metrics.Quality_Index", "quality_metrics.Percentage", "quality_metrics.Date_Update"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded quality_metrics",{"quality_metrics.Quality_Index"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

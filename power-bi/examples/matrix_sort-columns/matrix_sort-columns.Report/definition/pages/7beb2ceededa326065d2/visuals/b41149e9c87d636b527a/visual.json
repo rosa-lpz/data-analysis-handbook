@@ -1,0 +1,132 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "b41149e9c87d636b527a",
+  "position": {
+    "x": 89.69072164948453,
+    "y": 232.57731958762886,
+    "z": 4,
+    "height": 142.26804123711341,
+    "width": 1101.0309278350514,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "quality_checks"
+                    }
+                  },
+                  "Property": "Apple_Name"
+                }
+              },
+              "queryRef": "quality_checks.Apple_Name",
+              "nativeQueryRef": "Apple_Name",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "quality_checks"
+                    }
+                  },
+                  "Property": "Quality_Index"
+                }
+              },
+              "queryRef": "quality_checks.Quality_Index",
+              "nativeQueryRef": "Quality_Index",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "quality_checks"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(quality_checks.Status)",
+              "nativeQueryRef": "Status"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "subTotals": [
+        {
+          "properties": {
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Matrix table Sort Quality Index by qi_rank and Apple names by Count Rank Asc'"
+                }
+              }
+            },
+            "heading": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Heading3'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
