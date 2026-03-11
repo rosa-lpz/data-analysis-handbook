@@ -1,0 +1,57 @@
+table fruits_filtered_count
+	lineageTag: ecc5e805-4303-46c6-ba45-ca175f9e6478
+
+	column Fruit
+		lineageTag: 2f699efb-97df-422e-877e-599f05af3c79
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: fruits_db[Fruit]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Count
+		formatString: 0
+		lineageTag: 9b092ffd-396a-4f67-8574-96f279be91ed
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: fruits_db[Count]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		lineageTag: 58d27b6a-8def-4c16-abb2-d7507f5a7359
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: fruits_db[Color]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flavor
+		lineageTag: b1134d34-583f-45d2-a8c7-f6053e2265bc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: fruits_db[Flavor]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Freshnesh
+		lineageTag: cd5646bf-1591-4d9c-90e1-8bd0f0ed8c9c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: fruits_db[Freshnesh]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fruits_filtered_count = calculated
+		mode: import
+		source =
+				
+				TOPN(
+				    COUNTROWS( 'fruits_db' ),
+				    FILTER( 'fruits_db', [Count] > 20 ),
+				    [Count],
+				    DESC
+				)
+
+	annotation PBI_Id = 5f96a3fd711c481aba244492d50047d9
+

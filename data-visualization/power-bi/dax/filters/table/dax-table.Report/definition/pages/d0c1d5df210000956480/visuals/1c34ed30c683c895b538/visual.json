@@ -1,0 +1,116 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "1c34ed30c683c895b538",
+  "position": {
+    "x": 290.7216494845361,
+    "y": 53.19587628865979,
+    "z": 0,
+    "height": 192.37113402061854,
+    "width": 797.93814432989689,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_db"
+                    }
+                  },
+                  "Property": "Fruit"
+                }
+              },
+              "queryRef": "fruits_db.Fruit",
+              "nativeQueryRef": "Fruit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_db"
+                    }
+                  },
+                  "Property": "Count"
+                }
+              },
+              "queryRef": "Sum(fruits_db.Count)",
+              "nativeQueryRef": "Count"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_db"
+                    }
+                  },
+                  "Property": "Color"
+                }
+              },
+              "queryRef": "fruits_db.Color",
+              "nativeQueryRef": "Color"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_db"
+                    }
+                  },
+                  "Property": "Flavor"
+                }
+              },
+              "queryRef": "fruits_db.Flavor",
+              "nativeQueryRef": "Flavor"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_db"
+                    }
+                  },
+                  "Property": "Freshnesh"
+                }
+              },
+              "queryRef": "fruits_db.Freshnesh",
+              "nativeQueryRef": "Freshnesh"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Original table'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

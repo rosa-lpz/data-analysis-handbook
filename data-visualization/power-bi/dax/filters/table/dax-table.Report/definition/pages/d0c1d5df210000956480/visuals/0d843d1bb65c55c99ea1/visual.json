@@ -1,0 +1,116 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "0d843d1bb65c55c99ea1",
+  "position": {
+    "x": 283.91752577319585,
+    "y": 301.85567010309279,
+    "z": 1,
+    "height": 192.98969072164948,
+    "width": 454.63917525773195,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_filtered_count"
+                    }
+                  },
+                  "Property": "Fruit"
+                }
+              },
+              "queryRef": "Table_fruits.Fruit",
+              "nativeQueryRef": "Fruit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_filtered_count"
+                    }
+                  },
+                  "Property": "Freshnesh"
+                }
+              },
+              "queryRef": "Table_fruits.Freshnesh",
+              "nativeQueryRef": "Freshnesh"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_filtered_count"
+                    }
+                  },
+                  "Property": "Flavor"
+                }
+              },
+              "queryRef": "Table_fruits.Flavor",
+              "nativeQueryRef": "Flavor"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_filtered_count"
+                    }
+                  },
+                  "Property": "Count"
+                }
+              },
+              "queryRef": "Sum(Table_fruits.Count)",
+              "nativeQueryRef": "Count"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fruits_filtered_count"
+                    }
+                  },
+                  "Property": "Color"
+                }
+              },
+              "queryRef": "Table_fruits.Color",
+              "nativeQueryRef": "Color"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Filtered Table [Count] > 20 '"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

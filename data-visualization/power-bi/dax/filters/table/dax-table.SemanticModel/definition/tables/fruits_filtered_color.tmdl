@@ -1,0 +1,57 @@
+table fruits_filtered_color
+	lineageTag: d14849cd-2aec-492e-8203-96a0f7e01c9e
+
+	column Fruit
+		lineageTag: 12cb7a2a-1d79-4df8-9bc4-222a966bdf01
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: fruits_db[Fruit]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Count
+		formatString: 0
+		lineageTag: 53036b91-3e00-4f77-bce0-0b14c5035927
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: fruits_db[Count]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		lineageTag: e38d8fde-1b37-4a74-80f0-f48b05420fc9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: fruits_db[Color]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flavor
+		lineageTag: d9c4436a-db65-415a-aa97-4f700487d6f4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: fruits_db[Flavor]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Freshnesh
+		lineageTag: 607632dd-0c59-4a34-b1b8-4aada74fb5b1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: fruits_db[Freshnesh]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fruits_filtered_color = calculated
+		mode: import
+		source =
+				
+				TOPN(
+				    COUNTROWS( 'fruits_db' ),
+				    FILTER( 'fruits_db', [Color] = "Passed" ),
+				    [Fruit],
+				    ASC
+				)
+
+	annotation PBI_Id = d649d830e9d8486aab34dd70dc0a25fb
+
