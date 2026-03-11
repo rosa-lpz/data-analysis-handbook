@@ -85,8 +85,14 @@ CALCULATE(
 ```
 
 # Summary
-Goal	Correct DAX
-Filter rows	FILTER()
-Top rows	TOPN()
-Count rows	COUNTROWS()
-Filtered count	CALCULATE()
+| Goal           | Correct DAX   |
+| -------------- | ------------- |
+| Filter rows    | `FILTER()`    |
+| Top rows       | `TOPN()`      |
+| Count rows     | `COUNTROWS()` |
+| Filtered count | `CALCULATE()` |
+
+
+
+Your DAX expression has a **logic issue**. In **Microsoft Power BI**, the function **TOPN** expects the **first argument to be a fixed number**, but you used **COUNTROWS**, which returns a dynamic value. Also, `TOPN` is unnecessary if you only want rows where `[Count] > 20`.
+
