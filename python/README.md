@@ -1,5 +1,4 @@
 
-
 # Python Libraries commonly used to create data visualizations
 
   * ### [NumPy](https://github.com/rosa-lpz/python/tree/main/numpy)
@@ -11,5 +10,3 @@
   * ### [Plotly](https://github.com/rosa-lpz/python/tree/main/plotly)
 
   * ### [Seaborn](https://github.com/rosa-lpz/python/tree/main/seaborn)
-
-    
