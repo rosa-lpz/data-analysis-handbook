@@ -1,0 +1,7 @@
+expression folderPath = "C:\Users\rl-work\Documents\GitHub\handbooks\data-analysis-handbook\power-bi\examples\matrix_sort-columns\data\" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: db51cbd6-1b24-4a2f-90cc-80e0698103d2
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,29 @@
+Quality_Index,Apple_Name,Status,Count_Sort
+Count,Apple1,35,35
+Count,Apple2,23,23
+Count,Apple3,16,16
+Count,Apple4,76,76
+Count,Apple5,7,7
+Count,Apple6,10,10
+Count,Apple7,87,87
+Color,Apple1,N/A,35
+Color,Apple2,Passed,23
+Color,Apple3,Not Passed,16
+Color,Apple4,Passed,76
+Color,Apple5,Passed,7
+Color,Apple6,Passed,10
+Color,Apple7,Passed,87
+Flavor,Apple1,Passed,35
+Flavor,Apple2,N/A,23
+Flavor,Apple3,Passed,16
+Flavor,Apple4,N/A,76
+Flavor,Apple5,N/A,7
+Flavor,Apple6,Not Passed,10
+Flavor,Apple7,Passed,87
+Freshness,Apple1,Passed,35
+Freshness,Apple2,Not Passed,23
+Freshness,Apple3,Passed,16
+Freshness,Apple4,Passed,76
+Freshness,Apple5,Passed,7
+Freshness,Apple6,Passed,10
+Freshness,Apple7,Passed,87

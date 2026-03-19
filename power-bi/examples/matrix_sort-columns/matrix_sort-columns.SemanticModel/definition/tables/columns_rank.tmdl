@@ -1,0 +1,67 @@
+table columns_rank
+	lineageTag: 1c6dee0e-bc5f-4b2f-8c33-89ce98c9d67c
+
+	column 'Apple Col Name'
+		lineageTag: 20ceb2d7-e19b-4c1e-9c61-dc40f28fceae
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Apple Col Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count Val'
+		lineageTag: 10e944e6-ddee-429f-af0d-befe0b65f792
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count Val]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition columns_rank = calculated
+		mode: import
+		source =
+				
+				VAR _CountRow =
+				    FILTER( ALL( 'prod_data' ), 'prod_data'[Quality Index] = "Count" )
+				
+				VAR _AppleValues =
+				    ADDCOLUMNS(
+				        DATATABLE(
+				            "Apple Col Name", STRING,
+				            {
+				                { "Apple1" }, { "Apple2" }, { "Apple3" },
+				                { "Apple4" }, { "Apple5" }, { "Apple6" }, { "Apple7" }
+				            }
+				        ),
+				        "Count Val",
+				            VAR _n = [Apple Col Name]
+				            RETURN
+				                VALUE(
+				                    MAXX(
+				                        _CountRow,
+				                        SWITCH(
+				                            _n,
+				                            "Apple1", 'prod_data'[Apple1],
+				                            "Apple2", 'prod_data'[Apple2],
+				                            "Apple3", 'prod_data'[Apple3],
+				                            "Apple4", 'prod_data'[Apple4],
+				                            "Apple5", 'prod_data'[Apple5],
+				                            "Apple6", 'prod_data'[Apple6],
+				                            "Apple7", 'prod_data'[Apple7]
+				                        )
+				                    )
+				                )
+				    )
+				
+				RETURN
+				    TOPN(
+				        COUNTROWS( _AppleValues ),
+				        _AppleValues,
+				        [Count Val],
+				        DESC
+				    )
+
+	annotation PBI_Id = f21d8506ac144dabad51a2fee68125a9
+

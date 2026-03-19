@@ -1,3 +1,4 @@
 # Ignore Power BI local settings and cache
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
+**/folderPath.txt

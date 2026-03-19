@@ -1,0 +1,97 @@
+table fruit_quality
+	lineageTag: e7810b19-a4d3-4dec-8e94-bb459f06dfec
+
+	column Quality_Index
+		dataType: string
+		lineageTag: 27d214d9-cf9d-4403-a5a4-5b52bc895df4
+		summarizeBy: none
+		sourceColumn: Quality_Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple1
+		dataType: string
+		lineageTag: 26980169-fe8f-4700-9b5c-7c99e6e7ceb8
+		summarizeBy: none
+		sourceColumn: Apple1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple2
+		dataType: string
+		lineageTag: 7a2396a3-912e-4a71-89bd-12b39c79b6e5
+		summarizeBy: none
+		sourceColumn: Apple2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple3
+		dataType: string
+		lineageTag: e45521dc-03d5-44d9-8350-aecdf6beec05
+		summarizeBy: none
+		sourceColumn: Apple3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple4
+		dataType: string
+		lineageTag: 86a1fe9b-81c2-4743-b50c-aae959d57874
+		summarizeBy: none
+		sourceColumn: Apple4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple5
+		dataType: string
+		lineageTag: cdb75924-94ed-4844-8261-d6cee4ccedba
+		summarizeBy: none
+		sourceColumn: Apple5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple6
+		dataType: string
+		lineageTag: 6ac77de0-cf53-4096-b44d-e30398552bb9
+		summarizeBy: none
+		sourceColumn: Apple6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apple7
+		dataType: string
+		lineageTag: a4515722-d21b-4b84-a968-ef3ce2684cb2
+		summarizeBy: none
+		sourceColumn: Apple7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Percentage
+		dataType: string
+		lineageTag: 1a22d1c5-1491-46fc-bc0e-cf84c33ef1c3
+		summarizeBy: none
+		sourceColumn: Percentage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Update
+		dataType: string
+		lineageTag: 5783fc42-7d8c-4eb3-beee-4066f3e9c029
+		summarizeBy: none
+		sourceColumn: Date_Update
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fruit_quality = m
+		mode: import
+		queryGroup: matrix
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(folderPath & "fruit_quality.csv"),[Delimiter=",", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
