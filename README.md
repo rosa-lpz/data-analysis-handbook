@@ -9,40 +9,37 @@ Focuses on processing and analyzing data, primarily structured data, to extract 
 
 ## Statistics
 
-# Programming
-* [Python](https://github.com/rosa-lpz/python/)
-* [R](https://github.com/rosa-lpz/r)
-* [SQL](https://github.com/rosa-lpz/sql)
+## Programming
 
-## [Python](https://github.com/rosa-lpz/python/)
-* ### Python for Data Cleaning, Processing and Analysis
-   * #### [NumPy](https://github.com/rosa-lpz/python/tree/main/numpy)
-   * #### [Pandas](https://github.com/rosa-lpz/python/tree/main/pandas)
-   * #### [PySpark](https://github.com/rosa-lpz/pyspark)
-* ### Python for Data Visualization
-  * #### [Matplotlib](https://github.com/rosa-lpz/python/tree/main/matplotlib)
-  * #### [Seaborn](https://github.com/rosa-lpz/python/tree/main/seaborn)
-  * #### [Bokeh](https://github.com/rosa-lpz/python/tree/main/bokeh)
-  * #### [Plotly](https://github.com/rosa-lpz/python/tree/main/plotly)
+**[Python](https://github.com/rosa-lpz/python/)**
+* Python for Data Cleaning, Processing and Analysis
+   * [NumPy](https://github.com/rosa-lpz/python/tree/main/numpy)
+   * [Pandas](https://github.com/rosa-lpz/python/tree/main/pandas)
+   * [PySpark](https://github.com/rosa-lpz/pyspark)
+* Python for Data Visualization
+  * [Matplotlib](https://github.com/rosa-lpz/python/tree/main/matplotlib)
+  * [Seaborn](https://github.com/rosa-lpz/python/tree/main/seaborn)
+  * [Bokeh](https://github.com/rosa-lpz/python/tree/main/bokeh)
+  * [Plotly](https://github.com/rosa-lpz/python/tree/main/plotly)
 
-## [SQL](https://github.com/rosa-lpz/sql)
+**[SQL](https://github.com/rosa-lpz/sql)**
 
-# Databases
-* ## [SQL](https://github.com/rosa-lpz/sql)
-  
-# Data Analysis Software Tools
-* ## [Power BI](power-bi/)
-  * ### [Power Query M](power-bi/power-query-m/)
-    * #### [Functions](power-bi/power-query-m/functions/)
-      * [Table Functions](power-bi/power-query-m/functions/table/)
-  * ### [DAX](power-bi/dax/)
-    * #### [Filters](power-bi/dax/filters/)
-    * #### [Tables](power-bi/dax/tables/)
-  * ### [Documentation](power-bi/documentation/)
-* ## [Tableau](tableau/)
-* ## [Google Data Studio / Looker](google-data-studio-looker/)
 
-# [Resources for Data Science](https://github.com/rosa-lpz/resources-for-data-science)
+## Data Analysis Software Tools
+- **[Power BI](power-bi/)**
+  - [Power Query M](power-bi/power-query-m/)
+    - [Functions](power-bi/power-query-m/functions/)
+      - [Table Functions](power-bi/power-query-m/functions/table/)
+  - [DAX](power-bi/dax/)
+    - [Filters](power-bi/dax/filters/)
+    - [Tables](power-bi/dax/tables/)
+  - [Documentation](power-bi/documentation/)
+- **[Tableau](tableau/)**
+- **[Google Data Studio / Looker](google-data-studio-looker/)**
+
+
+## References / Resources
+### [Resources for Data Science](https://github.com/rosa-lpz/resources-for-data-science)
   * **Python**
     * [PDF](dataquest_python-cheatsheet.pdf) | [Website](https://www.dataquest.io/cheat-sheet/python-cheat-sheet/Much) | DataQuest - Python Cheat Sheet
     * [PDF](cheatsheets/dataquest_pandas-cheat-sheet.pdf) | [Website](https://www.dataquest.io/cheat-sheet/pandas-cheat-sheet/) | DataQuest - Pandas Cheat Sheet
