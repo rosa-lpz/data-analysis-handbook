@@ -41,3 +41,18 @@ Focuses on processing and analyzing data, primarily structured data, to extract 
   * ### [Documentation](power-bi/documentation/)
 * ## [Tableau](tableau/)
 * ## [Google Data Studio / Looker](google-data-studio-looker/)
+
+# [Resources for Data Science](https://github.com/rosa-lpz/resources-for-data-science)
+  * **Python**
+    * [PDF](dataquest_python-cheatsheet.pdf) | [Website](https://www.dataquest.io/cheat-sheet/python-cheat-sheet/Much) | DataQuest - Python Cheat Sheet
+    * [PDF](cheatsheets/dataquest_pandas-cheat-sheet.pdf) | [Website](https://www.dataquest.io/cheat-sheet/pandas-cheat-sheet/) | DataQuest - Pandas Cheat Sheet
+    * [Website](https://www.datacamp.com/tutorial/matplotlib-tutorial-python) | Datacamp - Introduction to Plotting with Matplotlib in Python
+  * **SQL**
+    * [PDF](cheatsheets/dataquest_sql-cheat-sheet.pdf)  | [Website](https://www.dataquest.io/cheat-sheet/sql-cheat-sheet/) | DataQuest - SQL Cheat Sheet
+  * **Power BI**
+    * [PDF](cheatsheets/dataquest_power-bi_cheat-sheet.pdf) |[Website](https://www.dataquest.io/cheat-sheet/power-bi-cheat-sheet/) | DataQuest - Power BI Cheat Sheet
+    * DataCamp
+      * [PDF](cheatsheets/datacamp_power-bi_cheat-sheet.pdf) | [Website](https://www.datacamp.com/cheat-sheet/power-bi-cheat-sheet) | Power BI 
+      * [PDF](cheatsheets/datacamp_power-bi_tables-in-power-query-m.pdf) | [Website](https://www.datacamp.com/cheat-sheet/working-with-tables-in-power-query-m-in-power-bi) | Working with Tables in Power Query M  
+      * [PDF](cheatsheets/datacamp_power-bi_data-transformation_power-query-m.pdf) | [Website](https://www.datacamp.com/cheat-sheet/data-transformation-with-power-query-m-in-power-bi) | Data Transformation with Power Query M  
+      * [PDF](cheatsheets/datacamp_power-bi-formulas-in-DAX_cheat-sheet.pdf) | [Website](https://www.datacamp.com/cheat-sheet/dax-cheat-sheet) | Formulas-in-DAX
