@@ -79,6 +79,23 @@ EVALUATE
     }
 ```
 
+## Summarize table
+
+Use it via New Table in the Modeling tab with a formula like SummaryTable = SUMMARIZE(SourceTable, GroupingColumn, "AggName", AggregationFunction()).
+```bash
+SUMMARIZE(
+    <table>,
+    <groupBy_columnName> [, <groupBy_columnName>]...,
+    [<name>, <expression>]...
+)
+```
+
+
+* <table>: Your source table (e.g., Sales).
+* <groupBy_columnName>: Columns to group by (must exist in the table or related tables).
+* <name>, <expression>: Pairs for new columns, like "Total Sales", SUM(Sales[Amount]).​
+
+
 # Calculated table
 * https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-calculated-tables
 
