@@ -27,6 +27,26 @@ ORDER BY [EnglishProductName] ASC
 Returns in Results a table listing only those products with a  SafetyStockLevel less than 200, in ascending order by  EnglishProductName.
 
 
+# CONSTANT
+To create a measure in Power BI that returns a constant count (like a fixed number such as 5, regardless of filters or context), use DAX to define it explicitly. This overrides dynamic behavior for scenarios like testing or fixed benchmarks. [graphed](https://www.graphed.com/blog/how-to-count-a-measure-in-power-bi)
+
+## DAX Formula
+```
+Constant Count = 5
+```
+- Go to the **Modeling** tab > **New Measure**.
+- Paste the formula above, replacing `5` with your desired constant.
+- This evaluates to the fixed value in any visual, table, or card. [graphed](https://www.graphed.com/blog/how-to-count-a-measure-in-power-bi)
+
+## Usage Example
+Add the measure to a table visual. It shows "5" everywhere, even with slicers applied—unlike dynamic counts like `COUNT(Table[Column])`. [stackoverflow](https://stackoverflow.com/questions/74738757/make-the-measure-constant-power-bi)
+
+## Advanced Constant
+For a computed constant (e.g., total rows without context sensitivity):
+```
+Constant Total Rows = COUNTROWS(ALL('YourTable'))
+```
+This ignores filters for a fixed total. [community.fabric.microsoft](https://community.fabric.microsoft.com/t5/Desktop/Making-a-filtered-measure-into-a-constant/m-p/192478)
 
 
 
