@@ -40,6 +40,33 @@ DATATABLE (
 * https://www.sqlbi.com/articles/create-static-tables-in-dax-using-the-datatable-function/
 * https://learn.microsoft.com/en-us/dax/datatable-function-dax
 
+# Create a table from an existing table
+To create a new table in Power BI (or similar tools like Excel Power Pivot) using DAX that references columns from an existing table, use the New Table feature under the Modeling tab and enter a DAX formula like SELECTCOLUMNS.
+
+```bash
+NewTableName = SELECTCOLUMNS(
+    ExistingTable,
+    "NewColumn1", [ExistingColumn1],
+    "NewColumn2", [ExistingColumn2]
+)
+```
+## References
+* https://www.statology.org/power-bi-dax-create-table-from-another-table/
+
+
+
+Common Variations
+
+* Filter rows: Wrap in FILTER, e.g., FilteredTable = FILTER(ExistingTable, ExistingTable[Points] > 20).​
+* From multiple tables: Use UNION or NATURALINNERJOIN, e.g., Combined = UNION(Table1, Table2).
+* Summarize/aggregate: Use SUMMARIZE(ExistingTable, ExistingTable[Team], "TotalPoints", SUM(ExistingTable[Points])).
+
+| Scenario                 | DAX Function           | Use Case                                         |
+| ------------------------ | ---------------------- | ------------------------------------------------ |
+| Select subset of columns | SELECTCOLUMNS          | Keep specific columns without changes statology​ |
+| Filter and select        | FILTER + SELECTCOLUMNS | Rows meeting criteria learn.microsoft​           |
+| Combine tables           | UNION or JOIN          | Merge data from two tables learn.microsoft​      |
+| Group and aggregate      | SUMMARIZE              | Unique values with totals powerbi​               |
 
 # Table constructor
 Returns a table of one or more columns.
@@ -52,5 +79,11 @@ EVALUATE
     }
 ```
 
-## References
+# Calculated table
+* https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-calculated-tables
+
+
+# References
 * https://learn.microsoft.com/en-us/dax/table-constructor
+* https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-calculated-tables
+* https://www.statology.org/power-bi-dax-create-table-from-another-table/
