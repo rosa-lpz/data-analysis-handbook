@@ -12,4 +12,21 @@
 
   * ### [Seaborn](https://github.com/rosa-lpz/python/tree/main/seaborn)
 
-    
+
+
+
+# Frameworks
+
+- **Svelte + FastAPI** → best long-term
+
+- **Dash** → best Python production option
+
+- **Streamlit** → fastest start
+
+- **Gradio** → best for ML/image pipelines
+
+- **Voila** → only if notebook-first
+
+  
+
+  
