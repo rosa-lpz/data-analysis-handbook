@@ -10,22 +10,22 @@
 
 
 ## Maths & Statistical Functions
-SUM(<column>) Adds all the numbers in a column.
-SUMX(<table>, <expression>) Returns the sum of an expression evaluated for each row in a table.
-AVERAGE(<column>) Returns the average (arithmetic mean) of all the numbers in a column.
-AVERAGEX(<table>, <expression>) Calculates the average (arithmetic mean) of a set of expressions evaluated over a table.
-MEDIAN(<column>) Returns the median of a column.
-MEDIANX(<table>, <expression>) Calculates the median of a set of expressions evaluated over a table.
-GEOMEAN(<column>) Calculates the geometric mean of a column.
-GEOMEANX(<table>, <expression>) Calculates the geometric mean of a set of expressions evaluated over a table.
-COUNT(<column>) Returns the number of cells in a column that contains non-blank values.
-COUNTX(<table>, <expression>) Counts the number of rows from an expression that evaluates to a non-blank value.
-DIVIDE(<numerator>, <denominator> [,<alternateresult>]) Performs division and returns alternate result or BLANK() on division by 0.
-MIN(<column>) Returns a minimum value of a column.
-MAX(<column>) Returns a maximum value of a column.
-COUNTROWS([<table>]) Counts the number of rows in a table.
-DISTINCTCOUNT(<column>) Counts the number of distinct values in a column.
-RANKX(<table>, <expression>[, <value>[, <order>[, <ties>]]]) Returns the ranking of a number in a list of numbers for each row in the table argument.
+* SUM(<column>) Adds all the numbers in a column.
+* SUMX(<table>, <expression>) Returns the sum of an expression evaluated for each row in a table.
+* AVERAGE(<column>) Returns the average (arithmetic mean) of all the numbers in a column.
+* AVERAGEX(<table>, <expression>) Calculates the average (arithmetic mean) of a set of expressions evaluated over a table.
+* MEDIAN(<column>) Returns the median of a column.
+* MEDIANX(<table>, <expression>) Calculates the median of a set of expressions evaluated over a table.
+* GEOMEAN(<column>) Calculates the geometric mean of a column.
+* GEOMEANX(<table>, <expression>) Calculates the geometric mean of a set of expressions evaluated over a table.
+* COUNT(<column>) Returns the number of cells in a column that contains non-blank values.
+* COUNTX(<table>, <expression>) Counts the number of rows from an expression that evaluates to a non-blank value.
+* DIVIDE(<numerator>, <denominator> [,<alternateresult>]) Performs division and returns alternate result or BLANK() on division by 0.
+* MIN(<column>) Returns a minimum value of a column.
+* MAX(<column>) Returns a maximum value of a column.
+* COUNTROWS([<table>]) Counts the number of rows in a table.
+* DISTINCTCOUNT(<column>) Counts the number of distinct values in a column.
+* RANKX(<table>, <expression>[, <value>[, <order>[, <ties>]]]) Returns the ranking of a number in a list of numbers for each row in the table argument.
 
 ## Simple Aggregations
 * SUM(<column>) adds all the numbers in a column
