@@ -46,6 +46,9 @@ Focuses on processing and analyzing data, primarily structured data, to extract 
     * [Website](https://www.datacamp.com/tutorial/matplotlib-tutorial-python) | Datacamp - Introduction to Plotting with Matplotlib in Python
   * **SQL**
     * [PDF](cheatsheets/dataquest_sql-cheat-sheet.pdf)  | [Website](https://www.dataquest.io/cheat-sheet/sql-cheat-sheet/) | DataQuest - SQL Cheat Sheet
+    * Datacamp
+      * [Website]([https://www.datacamp.com/cheat-sheet/sql-basics-cheat-sheet](https://www.datacamp.com/cheat-sheet/category/sql)) | SQL Cheat Sheets
+      * [PDF](cheatsheets/datacamp_sql-basics-cheat-sheet.pdf)  | [Website](https://www.datacamp.com/cheat-sheet/sql-basics-cheat-sheet) | SQL Basics Cheat Sheet
   * **Power BI**
     * [PDF](cheatsheets/dataquest_power-bi_cheat-sheet.pdf) |[Website](https://www.dataquest.io/cheat-sheet/power-bi-cheat-sheet/) | DataQuest - Power BI Cheat Sheet
     * DataCamp
