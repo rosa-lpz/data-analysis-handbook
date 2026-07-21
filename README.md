@@ -7,6 +7,8 @@ Focuses on processing and analyzing data, primarily structured data, to extract 
 * It requires skills in statistics, database management, and tools such as Excel, SQL, and visualization tools.
 * It is more descriptive and exploratory, focusing on interpreting data to improve efficiency and support business operations.
 
+[Data Analysis Workflow](data-analysis-workflow.md)
+
 ## Statistics
 
 ## Programming
