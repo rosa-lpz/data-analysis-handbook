@@ -1,0 +1,1 @@
+https://gorilla.bi/power-query/creating-tables/
