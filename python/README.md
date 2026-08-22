@@ -1,12 +1,20 @@
 
-# Python Libraries commonly used to create data visualizations
+# [Python](https://github.com/rosa-lpz/python/) Libraries 
 
-  * ### [NumPy](https://github.com/rosa-lpz/python/tree/main/numpy)
+  * ## Python for Data Cleaning, Processing and Analysis
 
-  * ### [Pandas](https://github.com/rosa-lpz/python/tree/main/pandas)
+    * ### [NumPy](https://github.com/rosa-lpz/python/tree/main/libraries/numpy)
 
-  * ### [Bokeh](https://github.com/rosa-lpz/python/tree/main/bokeh)
+    * ### [Pandas](https://github.com/rosa-lpz/python/tree/main/libraries/pandas)
 
-  * ### [Plotly](https://github.com/rosa-lpz/python/tree/main/plotly)
+    * ### [PySpark](https://github.com/rosa-lpz/pyspark)
 
-  * ### [Seaborn](https://github.com/rosa-lpz/python/tree/main/seaborn)
+* ## Python for Data Visualization
+
+  * ### [Matplotlib](https://github.com/rosa-lpz/python/tree/main/libraries/matplotlib)
+
+  * ### [Seaborn](https://github.com/rosa-lpz/python/tree/main/libraries/seaborn)
+
+  * ### [Bokeh](https://github.com/rosa-lpz/python/tree/main/libraries/bokeh)
+
+  * ### [Plotly](https://github.com/rosa-lpz/python/tree/main/libraries/plotly)
