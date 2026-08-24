@@ -128,3 +128,4 @@ Choose **Refresh** to refresh report page data and the data model. After all que
 # Reference
 
 * Microsoft Learn - [Show last refresh date to Power BI report](https://learn.microsoft.com/en-us/azure/devops/report/powerbi/add-last-refresh-time?view=azure-devops&tabs=private)
+* Guy in a Cube - [How do you get a refresh date in your Power BI report](https://youtu.be/oN6mOmEruOQ)
