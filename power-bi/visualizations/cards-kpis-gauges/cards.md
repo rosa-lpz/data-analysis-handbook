@@ -1,6 +1,8 @@
 # Cards Visuals
 
-The **card visual** in Power BI displays key metrics in a  flexible, visually appealing format. Each card shows a measure value  with optional callout images, reference labels, and supporting details. 
+Card visuals display a single fact or data point prominently. The card  visual supports both single-card and multi-card layouts, and can include images and detailed reference values within the visual. Use cards when a single number, such as total sales or market share, is the most  important thing to track.
+
+The **card visual** in Power BI displays key metrics in a flexible, visually appealing format. Each card shows a measure value  with optional callout images, reference labels, and supporting details. 
 
 ## Create a card visual
 
