@@ -1,6 +1,6 @@
 # Document Power BI dashboards
 
-o document a Power BI report effectively, use a structured approach that covers key aspects of the report such as purpose, audience, data sources, data transformation logic, data model, and key calculations or measures. Also include information for maintenance and troubleshooting. Documentation can be done in tools like Word, OneNote, or wikis, and can be supplemented by automated tools to extract metadata from the Power BI file.
+To document a Power BI report effectively, use a structured approach that covers key aspects of the report such as purpose, audience, data sources, data transformation logic, data model, and key calculations or measures. Also include information for maintenance and troubleshooting. Documentation can be done in tools like Word, OneNote, or wikis, and can be supplemented by automated tools to extract metadata from the Power BI file.
 
 Key components to document include:
 
