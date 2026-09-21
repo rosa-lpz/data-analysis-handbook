@@ -31,5 +31,11 @@ here are 10 key elements that should be in your documentation:
 
 # Requirements
 
-* https://nastengraph.substack.com/p/how-to-write-dashboard-documentation
-* https://docs.google.com/presentation/d/1EFgl1ckByFPN-fkGpdF4wLErfBaBaHAh/edit?slide=id.p9#slide=id.p9
+* [How to write Dashboard Documentation? by Anastasiya Kuznetsova](https://nastengraph.substack.com/p/how-to-write-dashboard-documentation)
+
+  * “[Dashboard Documentation. The Why, How, and What.” by Scott Eaton](https://docs.google.com/presentation/d/1EFgl1ckByFPN-fkGpdF4wLErfBaBaHAh/edit#slide=id.p1)
+  * [“Document Like a Pro: Your Ultimate Guide” by Tabitha Diaz](https://www.youtube.com/watch?v=w336ui1K0f0)
+  * [How to Improve Your Tableau Work with Documentation](https://interworks.com/blog/2020/02/24/how-to-improve-your-tableau-work-with-documentation/)
+  * [5 real-life examples of beautiful technical documentation in Confluence](https://www.atlassian.com/blog/add-ons/5-real-life-examples-beautiful-technical-documentation)
+
+  
